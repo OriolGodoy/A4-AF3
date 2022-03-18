@@ -6,12 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animales Fantásticos 3</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/img-pag.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
 
 <body>
     <div id="header">
@@ -23,10 +59,47 @@
             Law y Mads Mikkelsen, 'Animales fantásticos: Los secretos de Dumbledore' promete ser una aventura vital para el futuro de la saga.</p>
         <br>
         <br>
-        <img src="img/img-texto1.jpg" alt="imágen">
+        <img src="img/img-texto1.jpg" alt="imágen" class="imag">
         <br>
         <br>
         <h1>¿Qué es 'Animales fantásticos'?</h1>
+        <p>La franquicia 'Animales fantásticos' surge a modo de precuela del universo Harry Potter, situándose mucho años antes de la saga también creada por J.K. Rowling. Hasta ahora, Warner había estrenado otras dos películas.<a href="https://www.youtube.com/watch?v=US2LnWrrCq4">La primera fuera 'Animales
+            fantásticos y dónde encontrarlos'</a> en 2016, seguida dos años después por <a href="https://www.youtube.com/watch?v=fcE3g0DZsd8">'Animales fantásticos: Los crímenes de Grindelwald'.</a></p>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/oImEeiCiYTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img class="imagenes-carru" src="img/carrousel1.jpg" style="width:100%" height="1300px">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img class="imagenes-carru" src="img/carrousel2.jpg" style="width:100%" height="1300px">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img class="imagenes-carru" src="img/carrousel3.jpg" style="width:100%" height="1300px">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="pie">
     </div>
 
 </body>
